@@ -8,14 +8,16 @@ The CUDA Introduction exercises are design to get you accustomed to CUDA Program
 
 ## Clone, Build and Run
 
-Clone this repository from Github and then run the instructions below.
+From the repository root:
 
-1. From the `cuda-introduction` directory, run:
-    * Windows: `cmake -B build -S . -G "Visual Studio 17 2022"` to generate the Visual Studio project. You may choose a different Visual Studio version.
-    * Linux: `cmake -B build -S . -G "Unix Makefiles"` to generate the makefiles.
-2. Open the generated `CUDAIntroduction` project from the `build` directory.
-3. Build the project in Visual Studio. (Note that there are Debug and Release configuration options.)
-4. Run. Make sure you run the actual project as target (not `ALL_BUILD`) by right-clicking it and selecting "Set as StartUp Project".
+```sh
+xmake f -m debug -y
+xmake build saxpy
+# After completing the TODOs:
+xmake run saxpy
+```
+
+Use `transpose` or `matmul` for the other exercises. For VS Code debugging, see [Linux Setup](../LINUX_SETUP.md).
 
 Please ask me or the TAs ahead of time if you have trouble compiling the code. We want to be ready to go at the start of the lab.
 

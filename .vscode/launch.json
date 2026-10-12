@@ -1,0 +1,60 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "CUDA: cuda-gl-check (xmake debug)",
+            "type": "cuda-gdb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/debug/cuda-gl-check",
+            "cwd": "${workspaceFolder}",
+            "debuggerPath": "${workspaceFolder}/scripts/cuda-gdb",
+            "preLaunchTask": "xmake: build debug",
+            "stopAtEntry": true,
+            "onAPIError": "stop",
+            "args": [],
+            "environment": [
+                {
+                    "name": "__NV_PRIME_RENDER_OFFLOAD",
+                    "value": "1"
+                },
+                {
+                    "name": "__GLX_VENDOR_LIBRARY_NAME",
+                    "value": "nvidia"
+                }
+            ]
+        },
+        {
+            "name": "CUDA: saxpy (xmake debug)",
+            "type": "cuda-gdb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/debug/saxpy",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "xmake: build debug",
+            "stopAtEntry": true,
+            "onAPIError": "stop",
+            "args": []
+        },
+        {
+            "name": "CUDA: transpose (xmake debug)",
+            "type": "cuda-gdb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/debug/transpose",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "xmake: build debug",
+            "stopAtEntry": true,
+            "onAPIError": "stop",
+            "args": []
+        },
+        {
+            "name": "CUDA: matmul (xmake debug)",
+            "type": "cuda-gdb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/debug/matmul",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "xmake: build debug",
+            "stopAtEntry": true,
+            "onAPIError": "stop",
+            "args": []
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+#!/bin/sh
+# GLFW chooses Wayland when WAYLAND_DISPLAY exists, even if it is empty.
+# This legacy GLEW example needs GLX, so debug it through XWayland.
+unset WAYLAND_DISPLAY
+
+if [ -n "${CUDA_PATH:-}" ]; then
+    exec "$CUDA_PATH/bin/cuda-gdb" "$@"
+elif command -v cuda-gdb >/dev/null 2>&1; then
+    exec cuda-gdb "$@"
+elif [ -x /opt/cuda/bin/cuda-gdb ]; then
+    exec /opt/cuda/bin/cuda-gdb "$@"
+else
+    exec /usr/local/cuda/bin/cuda-gdb "$@"
+fi

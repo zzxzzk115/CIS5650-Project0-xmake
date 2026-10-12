@@ -1,0 +1,11 @@
+/build/
+/.xmake/
+/.vscode/compile_commands.json
+/compile_commands.json
+/.clangd
+/.cache/
+/*.nsys-rep
+/*.ncu-rep
+/*.sqlite
+/cuda-gdb.log
+/*.local.code-workspace

@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "name": "CUDA",
+            "compileCommands": "${workspaceFolder}/compile_commands.json",
+            "includePath": [
+                "${workspaceFolder}/cuda-gl-check/src",
+                "${workspaceFolder}/cuda-introduction/source"
+            ],
+            "cppStandard": "c++17",
+            "intelliSenseMode": "${default}"
+        }
+    ],
+    "version": 4
+}
