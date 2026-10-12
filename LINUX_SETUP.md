@@ -74,6 +74,8 @@ clangd reads `compile_commands.json` from the repository root. xmake updates it 
 
 C/C++ IntelliSense is disabled to avoid duplicate diagnostics. Compilation still uses nvcc and GCC; clangd provides completion and navigation.
 
+Automatic header insertion is disabled in `.clangd.in`, so CUDA completions do not add Clang internal headers when using either `code .` or a `.code-workspace` file.
+
 ## Using another machine
 
 Install CUDA Toolkit, a working NVIDIA driver, GCC, xmake, GLFW, GLEW, and OpenGL development libraries.
