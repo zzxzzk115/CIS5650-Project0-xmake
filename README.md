@@ -108,7 +108,7 @@ WebGPU works in Edge on Linux. [WebGPU Report](https://webgpureport.org/) detect
 
 - [x] CUDA and OpenGL environment configured.
 - [x] WebGL 2 and WebGPU browser checks passed.
-- [ ] SAXPY exercise.
+- [x] SAXPY implemented and checked against the CPU result.
 - [ ] Transpose exercise.
 - [ ] Matrix multiplication exercise.
 

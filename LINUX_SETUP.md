@@ -25,7 +25,7 @@ xmake build saxpy
 
 Each subproject has its own `xmake.lua`, included by the root configuration.
 
-Complete the exercise TODOs before running `saxpy`, `transpose`, or `matmul`.
+Complete the exercise TODOs before running `transpose` or `matmul`.
 
 For Release:
 
