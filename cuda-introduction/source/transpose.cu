@@ -19,16 +19,21 @@
 __global__ void copyKernel(const float* const a, float* const b, const unsigned sizeX, const unsigned sizeY)
 {
     // TODO 6a: Compute the global index for each thread along x and y dimentions.
-    unsigned i = 0;
-    unsigned j = 0;;
+    unsigned i = blockIdx.x * blockDim.x + threadIdx.x;
+    unsigned j = blockIdx.y * blockDim.y + threadIdx.y;
 
     // TODO 6b: Check if i or j are out of bounds. If they are, return.
+    if (i >= sizeX || j >= sizeY)
+    {
+        return;
+    }
 
     // TODO 6c: Compute global 1D index from i and j
-    unsigned index = 0;
+    unsigned index = j * sizeX + i;
 
     // TODO 6d: Copy data from A to B. Note that in copy kernel source and destination indices are the same
     // b[] = a[];
+    b[index] = a[index];
 }
 
 // TODO 11: Implement the transpose kernel
@@ -82,8 +87,11 @@ int main(int argc, char *argv[])
     float *d_a, *d_b;
 
     // TODO 2: Allocate memory on the device for d_a and d_b.
+    CUDA(cudaMalloc((void**)&d_a, sizeX * sizeY * sizeof(float)));
+    CUDA(cudaMalloc((void**)&d_b, sizeX * sizeY * sizeof(float)));
 
     // TODO 3: Copy array contents of A from the host (CPU) to the device (GPU)
+    CUDA(cudaMemcpy(d_a, a, sizeX * sizeY * sizeof(float), cudaMemcpyHostToDevice));
 
     CUDA(cudaDeviceSynchronize());
 
@@ -96,14 +104,17 @@ int main(int argc, char *argv[])
 
         // TODO 4: Assign a 2D distribution of BS_X x BS_Y x 1 CUDA threads within
         // Calculate number of blocks along X and Y in a 2D CUDA "grid" using divup
+        constexpr unsigned BS_X = 32;
+        constexpr unsigned BS_Y = 8;
         DIMS dims;
-        dims.dimBlock = dim3(1, 1, 1);
-        dims.dimGrid = dim3(1, 1, 1);
+        dims.dimBlock = dim3(BS_X, BS_Y, 1);
+        dims.dimGrid = dim3(divup(sizeX, BS_X), divup(sizeY, BS_Y), 1);
 
         // LOOK: Launch the copy kernel
         copyKernel<<<dims.dimGrid, dims.dimBlock>>>(d_a, d_b, sizeX, sizeY);
 
         // TODO 5: copy the answer back to the host (CPU) from the device (GPU)
+        CUDA(cudaMemcpy(b, d_b, sizeX * sizeY * sizeof(float), cudaMemcpyDeviceToHost));
 
         // LOOK: Use compareReferenceAndResult to check the result
         compareReferenceAndResult(a_gold, b, sizeX * sizeY);
