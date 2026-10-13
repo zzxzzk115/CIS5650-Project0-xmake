@@ -42,6 +42,11 @@ Open the shared workspace with `code CIS5650-Project0.code-workspace`, or open t
 repository root with `code .`. Use the Nsight, clangd, and xmake extensions
 recommended by this workspace.
 
+Use the recommended Better Todo Tree extension for TODO navigation. Disable or
+uninstall the original Todo Tree before using the fork; existing `todo-tree.*`
+settings can be imported. Keep machine-specific ripgrep paths in local user
+settings rather than the shared workspace.
+
 1. Set a breakpoint at `cuda-gl-check/src/kernel.cu:79`.
 2. Select **CUDA: cuda-gl-check (xmake debug)** in Run and Debug.
 3. Focus the source editor and press **F5** to build and stop at `main`; press **F5** again to reach the GPU breakpoint.

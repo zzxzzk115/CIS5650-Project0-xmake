@@ -74,6 +74,25 @@ Open the shared VS Code workspace with `code CIS5650-Project0.code-workspace`. I
 relative paths and the same clangd/xmake settings as the folder configuration;
 **Ctrl+Shift+B** runs the Debug build task.
 
+## TODO navigation
+
+Install [Better Todo Tree](https://marketplace.visualstudio.com/items?itemName=FanaticPythoner.better-todo-tree)
+from the recommended extensions. It provides the TODO tree and navigation and
+imports existing `todo-tree.*` settings. Disable or uninstall the original
+`Gruntfuggly.todo-tree` extension before using the fork, then run **Developer:
+Reload Window** in each open project window.
+
+The Windows package bundles ripgrep, so no machine-specific executable path is
+needed in the shared workspace. The original Todo Tree can report
+`command 'todo-tree.refresh' not found` when its older ripgrep lookup fails on
+new VS Code layouts. Use **Better Todo Tree: Refresh** after migrating. Keep any
+personal ripgrep override in local user settings rather than the shared
+workspace, and remove stale overrides when changing operating systems.
+
+Better Todo Tree 1.3.4 has been verified in VS Code on Windows: both the new
+refresh command and its legacy alias execute, and the TODO tree includes CUDA
+source files using the bundled ripgrep without a path override.
+
 ## Validation
 
 All four targets build in Debug and Release on the validation machine. SAXPY,
