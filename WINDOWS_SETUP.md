@@ -74,6 +74,32 @@ Open the shared VS Code workspace with `code CIS5650-Project0.code-workspace`. I
 relative paths and the same clangd/xmake settings as the folder configuration;
 **Ctrl+Shift+B** runs the Debug build task.
 
+## clangd configuration
+
+Use clangd 23.1.0 or newer for the CUDA 13 environment; 23.1.0 is verified here.
+Set `clangd.path` in local VS Code user settings if the extension still uses an
+older executable. After changing it, run **clangd: Restart language server**.
+
+Xmake selects `.clangd.win.in` on Windows hosts and `.clangd.nowin.in` on Linux
+hosts, then writes a local `.clangd` with the detected Toolkit and architecture.
+Windows uses the clang-cl driver and forwards C++17/CUDA flags through `/clang:`.
+NVCC arguments are filtered for both CUDA sources and headers, including
+`-Xcompiler=...`; CUDA and CCCL include paths are generated without embedded
+shell quotes. Header insertion is controlled by the shared VS Code arguments.
+
+Keep the templates in Git. `.clangd`, `compile_commands.json`, and files under
+`build/clangd/` are generated for the local machine and ignored by Git. Check
+global `%LOCALAPPDATA%/clangd/config.yaml` if project flags are overridden: user
+configuration takes precedence, and a global `-std:c++latest` is incompatible
+with a CUDA command using the GNU-style driver.
+
+Some Toolkit versions ship the CCCL `string_view` issue fixed by
+[NVIDIA PR #7904](https://github.com/NVIDIA/cccl/pull/7904). When those exact
+host-only deduction guide annotations are present, xmake creates a corrected
+copy and a Clang VFS overlay under `build/clangd/`. Only clangd reads this overlay;
+nvcc continues to compile against the installed Toolkit. The SDK and exercise
+sources are not modified. Already-fixed headers need no overlay.
+
 ## TODO navigation
 
 Install [Better Todo Tree](https://marketplace.visualstudio.com/items?itemName=FanaticPythoner.better-todo-tree)
@@ -105,3 +131,7 @@ The build generates `.clangd` and `compile_commands.json` using the Windows
 Toolkit path. The Visual Studio solution is also generated locally. Generated
 files are ignored by Git. A live Nsight breakpoint session and Windows profiler
 captures have not been validated.
+
+Clangd 23.1.0 parses all project compilation units and headers without syntax or
+configuration errors. The checks disable clangd's refactoring self-tests
+(`--tweaks=`), which are separate from source diagnostics.

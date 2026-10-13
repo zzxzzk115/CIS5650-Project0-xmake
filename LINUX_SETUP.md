@@ -77,11 +77,11 @@ These flags enable experimental Linux support in Chromium; see the [official tro
 
 ## Code completion
 
-clangd reads `compile_commands.json` from the repository root. xmake updates it after builds and generates `.clangd` from `.clangd.in` with the detected CUDA path and GPU architecture. The VS Code extension's separate database generation is disabled. Both generated files are ignored by Git. Edit `.clangd.in` for shared clangd options.
+clangd reads `compile_commands.json` from the repository root. xmake updates it after builds and generates `.clangd` with the detected CUDA path and GPU architecture. It selects `.clangd.nowin.in` on Linux hosts and `.clangd.win.in` on Windows hosts. The VS Code extension's separate database generation is disabled. Both generated files are ignored by Git; edit the platform templates for shared options.
 
 C/C++ IntelliSense is disabled to avoid duplicate diagnostics. Compilation still uses nvcc and GCC; clangd provides completion and navigation.
 
-Automatic header insertion is disabled in `.clangd.in`, so CUDA completions do not add Clang internal headers when using either `code .` or a `.code-workspace` file.
+Automatic header insertion is disabled by `--header-insertion=never` in the shared VS Code clangd arguments, so CUDA completions do not add Clang internal headers when using either `code .` or a `.code-workspace` file.
 
 ## Using another machine
 
