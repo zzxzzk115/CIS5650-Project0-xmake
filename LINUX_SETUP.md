@@ -38,7 +38,7 @@ Binaries are in `build/{debug,release}/`.
 
 ## Debug in VS Code
 
-Open the shared workspace with `code CIS5650.code-workspace`, or open the
+Open the shared workspace with `code CIS5650-Project0.code-workspace`, or open the
 repository root with `code .`. Use the Nsight, clangd, and xmake extensions
 recommended by this workspace.
 

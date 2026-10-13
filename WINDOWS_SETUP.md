@@ -70,7 +70,7 @@ The committed VS Code CUDA launch configurations use Linux `cuda-gdb`. Use them
 on Linux or a supported remote Linux environment. VS Code's xmake build tasks
 can also build the native Windows targets.
 
-Open the shared VS Code workspace with `code CIS5650.code-workspace`. It uses
+Open the shared VS Code workspace with `code CIS5650-Project0.code-workspace`. It uses
 relative paths and the same clangd/xmake settings as the folder configuration;
 **Ctrl+Shift+B** runs the Debug build task.
 

@@ -1,6 +1,7 @@
 {
     "folders": [
         {
+            "name": "CIS5650 Project 0",
             "path": "."
         }
     ],
@@ -18,17 +19,17 @@
         "nsight.cuda.languageSupport.provider": "clangd",
         "nsight.cuda.languageSupport.autoConfigure": false,
         "workbench.colorCustomizations": {
-            "activityBar.background": "#0F3328",
-            "titleBar.activeBackground": "#164838",
-            "titleBar.activeForeground": "#F5FCFA",
-            "titleBar.inactiveBackground": "#0F3328",
-            "titleBar.inactiveForeground": "#F5FCFA",
-            "statusBar.background": "#0F3328",
-            "statusBar.foreground": "#F5FCFA",
-            "statusBar.debuggingBackground": "#0F3328",
-            "statusBar.debuggingForeground": "#F5FCFA",
-            "statusBar.noFolderBackground": "#0F3328",
-            "statusBar.noFolderForeground": "#F5FCFA"
+            "activityBar.background": "#033333",
+            "titleBar.activeBackground": "#054848",
+            "titleBar.activeForeground": "#E9FEFE",
+            "titleBar.inactiveBackground": "#033333",
+            "titleBar.inactiveForeground": "#E9FEFE",
+            "statusBar.background": "#033333",
+            "statusBar.foreground": "#E9FEFE",
+            "statusBar.debuggingBackground": "#033333",
+            "statusBar.debuggingForeground": "#E9FEFE",
+            "statusBar.noFolderBackground": "#033333",
+            "statusBar.noFolderForeground": "#E9FEFE"
         }
     }
 }

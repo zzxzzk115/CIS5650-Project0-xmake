@@ -17,7 +17,7 @@ Windows debugging setup.
 
 The project uses xmake for builds, clangd for completion and navigation, and Nsight in VS Code for Linux CUDA debugging. See [Linux Setup](LINUX_SETUP.md) for commands. Native Windows CUDA debugging uses Nsight Visual Studio Edition.
 
-Open the shared VS Code workspace with `code CIS5650.code-workspace`.
+Open the shared VS Code workspace with `code CIS5650-Project0.code-workspace`.
 
 CMake has been replaced by a root `xmake.lua` that includes both subprojects. CUDA paths and architecture are detected automatically, and the CUDA/OpenGL target handles the Linux rendering environment when run.
 
