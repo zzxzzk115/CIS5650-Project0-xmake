@@ -110,6 +110,6 @@ WebGPU works in Edge on Linux. [WebGPU Report](https://webgpureport.org/) detect
 - [x] WebGL 2 and WebGPU browser checks passed.
 - [x] SAXPY implemented and checked against the CPU result.
 - [x] Transpose exercise.
-- [ ] Matrix multiplication exercise.
+- [x] Matrix multiplication exercise.
 
 See [project instructions](INSTRUCTION.md), [CUDA introduction](cuda-introduction/README.md), and the [upstream project](https://github.com/CIS5650-Fall-2026/Project0-Getting-Started).
