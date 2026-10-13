@@ -1,5 +1,6 @@
-/build/
-/.xmake/
+build/
+.xmake/
+/vsxmake*/
 /.vscode/compile_commands.json
 /compile_commands.json
 /.clangd

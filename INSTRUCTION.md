@@ -30,7 +30,8 @@ CIS 5650 projects require a compatible NVIDIA GPU. As some of you may not have a
 
 Follow the [Hardware and Software Setup](https://cis5650-fall-2026.github.io/setup/) pages on the course website to set up your development environment.
 
-This fork uses xmake on Linux. See [Linux Setup](LINUX_SETUP.md) for build and debug commands.
+This fork uses xmake on Linux and Windows. See [Linux Setup](LINUX_SETUP.md) or
+[Windows Setup](WINDOWS_SETUP.md) for build and debug commands.
 
 ### Setup you Git Environment
 

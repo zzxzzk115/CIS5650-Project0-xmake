@@ -38,7 +38,9 @@ Binaries are in `build/{debug,release}/`.
 
 ## Debug in VS Code
 
-Open the repository root with `code .`. Use the Nsight, clangd, and xmake extensions recommended by this workspace.
+Open the shared workspace with `code CIS5650.code-workspace`, or open the
+repository root with `code .`. Use the Nsight, clangd, and xmake extensions
+recommended by this workspace.
 
 1. Set a breakpoint at `cuda-gl-check/src/kernel.cu:79`.
 2. Select **CUDA: cuda-gl-check (xmake debug)** in Run and Debug.
@@ -82,4 +84,6 @@ Install CUDA Toolkit, a working NVIDIA driver, GCC, xmake, GLFW, GLEW, and OpenG
 
 Keep `cuda-gdb` on `PATH`. For a custom CUDA installation, use `xmake f --cuda=/path/to/cuda`. To build without GPU access, specify an architecture such as `--cuda_arch=sm_89`.
 
-The build and local debugger target Linux. Use VS Code Remote SSH or WSL when editing from Windows or macOS.
+The VS Code CUDA launch configurations target Linux. Use VS Code Remote SSH or
+WSL when using those configurations from Windows or macOS. Native Windows builds
+and the Visual Studio/Nsight workflow are described in [Windows Setup](WINDOWS_SETUP.md).

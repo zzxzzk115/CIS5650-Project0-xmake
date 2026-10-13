@@ -10,9 +10,14 @@ I am a University of Leeds PhD student, not a Penn student, following CIS 5650 i
 
 ## Environment
 
-Linux is the primary development environment. Windows has not been tested.
+Linux is the primary development environment. Windows builds and runtime checks
+have also been validated on an RTX 4080 SUPER with CUDA 13.3 and NVIDIA driver
+617.42. See [Windows Setup](WINDOWS_SETUP.md) for the tested commands and native
+Windows debugging setup.
 
-The project uses xmake for builds, clangd for completion and navigation, and Nsight in VS Code for CUDA debugging. See [Linux Setup](LINUX_SETUP.md) for commands.
+The project uses xmake for builds, clangd for completion and navigation, and Nsight in VS Code for Linux CUDA debugging. See [Linux Setup](LINUX_SETUP.md) for commands. Native Windows CUDA debugging uses Nsight Visual Studio Edition.
+
+Open the shared VS Code workspace with `code CIS5650.code-workspace`.
 
 CMake has been replaced by a root `xmake.lua` that includes both subprojects. CUDA paths and architecture are detected automatically, and the CUDA/OpenGL target handles the Linux rendering environment when run.
 
