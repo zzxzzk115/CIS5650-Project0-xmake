@@ -3,17 +3,18 @@
 **University of Pennsylvania, CIS 5650: GPU Programming and Architecture, Project 0**
 
 - Kexuan Zhang
-- Personal laptop: CachyOS Linux, Intel Core i9-13900H, 32 GB RAM, NVIDIA GeForce RTX 4060 Laptop GPU (8 GB).
-- CUDA 13.4, NVIDIA driver 615.71.09, xmake 3.1.1, VS Code with Nsight and clangd.
+- Personal laptop: CachyOS Linux, Intel Core i9-13900H, 32 GB RAM, NVIDIA GeForce RTX 4060 Laptop GPU (8 GB), CUDA 13.4, NVIDIA driver 615.71.09, xmake 3.1.1.
+- Lab PC: Windows, Intel Core i7-14700, 32 GB RAM, NVIDIA GeForce RTX 4080 SUPER (16 GB), CUDA 13.3, NVIDIA driver 617.42.
+- Development tools: xmake, VS Code with clangd and NVIDIA Nsight.
 
 I am a University of Leeds PhD student, not a Penn student, following CIS 5650 independently to learn CUDA/GPGPU and understand GPUs more deeply. My prior graphics work used C++, GLSL, Slang, and Vulkan, with no CUDA experience. This repository is for personal study; no blog, LinkedIn, or other social media write-up is planned.
 
 ## Environment
 
-Linux is the primary development environment. Windows builds and runtime checks
-have also been validated on an RTX 4080 SUPER with CUDA 13.3 and NVIDIA driver
-617.42. See [Windows Setup](WINDOWS_SETUP.md) for the tested commands and native
-Windows debugging setup.
+The personal laptop running CachyOS Linux is the primary development machine.
+Builds and runtime checks have also been validated on the Windows lab PC.
+See [Windows Setup](WINDOWS_SETUP.md) for the tested commands and native Windows
+debugging setup.
 
 The project uses xmake for builds, clangd for completion and navigation, and Nsight in VS Code for Linux CUDA debugging. See [Linux Setup](LINUX_SETUP.md) for commands. Native Windows CUDA debugging uses Nsight Visual Studio Edition.
 
